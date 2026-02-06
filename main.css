@@ -18,10 +18,11 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    background-color: rgb(90, 111, 129);
+    background-color: rgb(174, 188, 201);
     width: 100%;
     padding: 10px 5%;
     box-sizing: border-box;
+    border-radius: 25px;
 }
 
 .jupalogo {
