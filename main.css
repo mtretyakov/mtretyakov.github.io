@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url("SpaceGrotesk-Bold.ttf")
+}
+
+@font-face {
+    font-family: "Verceitti";
+    src: url("Vercetti-Regular.ttf");
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: rgb(90, 111, 129);
+    width: 100%;
+    padding: 10px 5%;
+    box-sizing: border-box;
+}
+
+.jupalogo {
+    height: 100px;
+    aspect-ratio: 94.6992 / 129.991;
+    flex-shrink: 0;
+}
+
+.jupalogo svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.name {
+    font-family: 'Space Grotesk';
+    font-size: 200%;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .head {
+        padding: 10px 5%;
+    }
+
+    .jupalogo {
+        height: 60px;
+    }
+
+    .name {
+        font-size: 120%;
+        line-height: 1.3;
+    }
+}
