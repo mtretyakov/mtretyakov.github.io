@@ -421,9 +421,74 @@
             color: var(--gray);
         }
 
-        /* Voting Section */
-        .voting {
+        /* Details Section (теперь перед Voting) */
+        .details {
             background: linear-gradient(135deg, #f0f9ff 0%, #fef7ff 100%);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .detail-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .detail-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+        }
+
+        .detail-card ul {
+            list-style: none;
+        }
+
+        .detail-card li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .detail-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* Voting Section (теперь после Details) */
+        .voting {
+            background-color: var(--white);
         }
 
         .voting-steps {
@@ -433,7 +498,7 @@
         }
 
         .step {
-            background: var(--white);
+            background: var(--light);
             padding: 2.5rem;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow);
@@ -513,67 +578,6 @@
             margin: 1rem 0;
             display: block;
             letter-spacing: -0.03em;
-        }
-
-        /* Details Section */
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .detail-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .detail-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .detail-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .detail-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            letter-spacing: -0.02em;
-        }
-
-        .detail-card ul {
-            list-style: none;
-        }
-
-        .detail-card li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .detail-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: 800;
         }
 
         /* Footer */
@@ -791,6 +795,19 @@
             font-weight: 500;
             text-align: center;
         }
+
+        /* SVG Icons Styling */
+        .detail-icon-svg {
+            width: 32px;
+            height: 32px;
+            filter: brightness(0) invert(1); /* Делает SVG белым */
+        }
+
+        .detail-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -813,8 +830,8 @@
             
             <nav class="nav-links" id="navLinks">
                 <a href="#about" class="nav-link">Über Mich</a>
-                <a href="#vote" class="nav-link">Wie Wählen?</a>
                 <a href="#details" class="nav-link">Meine Ziele</a>
+                <a href="#vote" class="nav-link">Wie Wählen?</a>
                 <a href="#stimmabgabe" class="nav-cta">Jetzt Unterstützen</a>
             </nav>
         </div>
@@ -825,8 +842,8 @@
         <div class="container">
             <div class="hero-content fade-in">
                 <div class="hero-text">
-                    <h1>Mykhaylo Tretyakov</h1>
-                    <p>Kandidat für das Jugendparlament Braunschweig. Ich setze mich für eine jugendgerechte Stadt ein, in der junge Menschen mitbestimmen и ihre Zukunft aktiv gestalten können.</p>
+                    <h1>Mykhaylo (Mischa) Tretyakov</h1>
+                    <p>Kandidat für das Jugendparlament Braunschweig. Ich setze mich für eine Stadt ein, in der junge Menschen mitbestimmen und ihre Zukunft aktiv gestalten können.</p>
                     <div class="candidate-badge fade-in stagger-delay-1">Kandidat №42</div>
                 </div>
                 <div class="hero-image fade-in stagger-delay-2">
@@ -846,14 +863,22 @@
             <div class="section-header fade-in">
                 <div class="section-subtitle">PORTFOLIO</div>
                 <h2 class="section-title">Über <span>Mich</span></h2>
-                <p class="section-desc">17 Jahre, engagiert für die Jugend Braunschweigs. Schüler des Gymnasiums Kleine Burg mit Leidenschaft für Politik und Gemeinschaft.</p>
+                <p class="section-desc">Schüler des Gymnasiums Raabeschule. Mein Name ist Mykhaylo, aber du kannst mich auch Mischa nennen, so nennen mich meine Freunde.</p>
             </div>
             
             <div class="about-content">
                 <div class="about-text fade-in">
-                    <p>Seit meiner frühen Jugend engagiere ich mich für die Belange junger Menschen in unserer Stadt. Ich bin überzeugt, dass Jugendliche nicht nur die Zukunft, sondern auch die Gegenwart Braunschweigs sind.</p>
-                    <p>Meine Motivation für die Kandidatur zum Jugendparlament entspringt dem Wunsch, eine Brücke zwischen Jugend und Politik zu bauen. Ich möchte sicherstellen, dass unsere Stimmen gehört und unsere Ideen umgesetzt werden.</p>
-                    <p>In meiner Freizeit engagiere ich mich im örtlichen Jugendzentrum, spiele Geige im Schulorchester und organisiere Clean-Up-Events in unseren Parks.</p>
+                    <p>Ich bin 15 Jahre alt und wurde in Odessa, am Schwarzen Meer in der Ukraine, geboren. Seit 2023 lebe ich nun dauerhaft in Deutschland. Meine Familie und ich lieben dieses Land sehr und respektieren seine Traditionen. Hier habe ich viele Freunde und enge Verwandte.</p>
+                    
+                    <p>Ich besuche die 10. Klasse des Gymnasiums Raabeschule. Auch mein jüngerer Bruder geht auf diese Schule.</p>
+                    
+                    <p>Zu meinen Hobbys gehören Skifahren und Schwimmen. Ich bin Mitglied der DLRG, der Deutschen Lebens-Rettungs-Gesellschaft.</p>
+                    
+                    <p>Seit mehr als 5 Jahren besuche ich eine IT-Akademie. Im letzten Jahr habe ich ein Zwischenzeugnis erhalten, das meine Fähigkeiten in verschiedenen Programmiersprachen wie Python, HTML und CSS bestätigt.</p>
+                    
+                    <p>Mein Lebensweg hat dazu geführt, dass ich vor meiner Ankunft in Deutschland bereits mehrere Schulen in verschiedenen Ländern besucht habe. Ich glaube, dass ich dadurch interessante und wertvolle Erfahrungen gesammelt habe, die ich in das Leben der Schülerinnen und Schüler in Braunschweig einbringen könnte. Ein frischer Blick von außen und gute Ideen sind immer hilfreich!</p>
+                    
+                    <p>Ich möchte diese Erfahrungen nutzen, um eine Brücke zwischen verschiedenen Kulturen zu bauen und mich für die Interessen aller Jugendlichen in unserer Stadt einzusetzen.</p>
                 </div>
                 
                 <div class="about-image fade-in stagger-delay-2">
@@ -868,7 +893,61 @@
         </div>
     </section>
 
-    <!-- Voting Section -->
+    <!-- Details Section (теперь перед Voting) -->
+    <section class="details" id="details">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-subtitle">MEINE VISION FÜR BRAUNSCHWEIG</div>
+                <h2 class="section-title">Meine <span>Hauptziele</span></h2>
+                <p class="section-desc">Als Mitglied des Jugendparlaments werde ich mich für folgende Schwerpunkte einsetzen, um Braunschweig noch lebenswerter für junge Menschen zu gestalten.</p>
+            </div>
+            
+            <div class="details-grid">
+                <div class="detail-card fade-in stagger-delay-1">
+                    <div class="detail-icon">
+                        <img src="school.svg" alt="Umwelt & Nachhaltigkeit" class="detail-icon-svg">
+                    </div>
+                    <h3>Umwelt & Nachhaltigkeit</h3>
+                    <ul>
+                        <li>Mehr Grünflächen und Aufenthaltsorte für Jugendliche</li>
+                        <li>Ausbau des Fahrradnetzes und kostenloser ÖPNV für Jugendliche</li>
+                        <li>Plastikfreie Schulen und nachhaltige Schulverpflegung</li>
+                        <li>Förderung von Urban Gardening Projekten</li>
+                    </ul>
+                </div>
+
+                <div class="detail-card fade-in stagger-delay-3">
+                    <div class="detail-icon">
+                        <img src="laptop.svg" alt="Mitbestimmung & Teilhabe" class="detail-icon-svg">
+                    </div>
+                    <h3>Mitbestimmung & Teilhabe</h3>
+                    <ul>
+                        <li>Stärkere Einbindung Jugendlicher in kommunale Entscheidungen</li>
+                        <li>Regelmäßige Jugendforen mit Politikern aller Ebenen</li>
+                        <li>Transparenz in der Jugendpolitik und einfacherer Zugang zu Informationen</li>
+                        <li>Unterstützung von Jugendinitiativen und -projekten</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-card fade-in stagger-delay-2">
+                    <div class="detail-icon">
+                        <img src="fitness.svg" alt="Bildung & Freizeit" class="detail-icon-svg">
+                    </div>
+                    <h3>Bildung & Freizeit</h3>
+                    <ul>
+                        <li>Modernisierung und digitale Ausstattung aller Schulen</li>
+                        <li>Kostenlose Nachhilfe- und Förderprogramme</li>
+                        <li>Ausbau von Jugendzentren und Sportangeboten</li>
+                        <li>Kultur- und Freizeitangebote zu sozialen Preisen</li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Voting Section (теперь после Details) -->
     <section class="voting" id="vote">
         <div class="container">
             <div class="section-header fade-in">
@@ -906,52 +985,6 @@
         </div>
     </section>
 
-    <!-- Details Section -->
-    <section class="details" id="details">
-        <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-subtitle">MEINE VISION FÜR BRAUNSCHWEIG</div>
-                <h2 class="section-title">Meine <span>Hauptziele</span></h2>
-                <p class="section-desc">Als Mitglied des Jugendparlaments werde ich mich für folgende Schwerpunkte einsetzen, um Braunschweig noch lebenswerter für junge Menschen zu gestalten.</p>
-            </div>
-            
-            <div class="details-grid">
-                <div class="detail-card fade-in stagger-delay-1">
-                    <div class="detail-icon">🌿</div>
-                    <h3>Umwelt & Nachhaltigkeit</h3>
-                    <ul>
-                        <li>Mehr Grünflächen und Aufenthaltsorte für Jugendliche</li>
-                        <li>Ausbau des Fahrradnetzes und kostenloser ÖPNV für Jugendliche</li>
-                        <li>Plastikfreie Schulen und nachhaltige Schulverpflegung</li>
-                        <li>Förderung von Urban Gardening Projekten</li>
-                    </ul>
-                </div>
-                
-                <div class="detail-card fade-in stagger-delay-2">
-                    <div class="detail-icon">🎓</div>
-                    <h3>Bildung & Freizeit</h3>
-                    <ul>
-                        <li>Modernisierung und digitale Ausstattung aller Schulen</li>
-                        <li>Kostenlose Nachhilfe- und Förderprogramme</li>
-                        <li>Ausbau von Jugendzentren und Sportangeboten</li>
-                        <li>Kultur- und Freizeitangebote zu sozialen Preisen</li>
-                    </ul>
-                </div>
-                
-                <div class="detail-card fade-in stagger-delay-3">
-                    <div class="detail-icon">💬</div>
-                    <h3>Mitbestimmung & Teilhabe</h3>
-                    <ul>
-                        <li>Stärkere Einbindung Jugendlicher in kommunale Entscheidungen</li>
-                        <li>Regelmäßige Jugendforen mit Politikern aller Ebenen</li>
-                        <li>Transparenz in der Jugendpolitik und einfacherer Zugang zu Informationen</li>
-                        <li>Unterstützung von Jugendinitiativen und -projekten</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -971,8 +1004,8 @@
                     <div class="footer-column">
                         <h4>Navigation</h4>
                         <a href="#about">Über Mich</a>
-                        <a href="#vote">Wie Wählen?</a>
                         <a href="#details">Meine Ziele</a>
+                        <a href="#vote">Wie Wählen?</a>
                         <a href="#home">Startseite</a>
                     </div>
                     
