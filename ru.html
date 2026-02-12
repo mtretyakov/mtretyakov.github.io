@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mykhaylo Tretyakov | Kandidat №42 Jugendparlament Braunschweig</title>
+    <title>Михаил Третьяков | Кандидат №42 Молодежный парламент Брауншвейга</title>
     <style>
         /* Локальные шрифты */
         @font-face {
@@ -156,7 +156,6 @@
             filter: brightness(0) invert(1);
         }
 
-        /* Анимация как у Jetzt Unterstützen */
         .logo-icon:hover {
             transform: translateY(-3px);
             box-shadow: 
@@ -355,7 +354,6 @@
             position: relative;
         }
 
-        /* Улучшенный бокс для фото в Hero */
         .image-wrapper {
             position: relative;
             border-radius: var(--radius-lg);
@@ -505,7 +503,6 @@
             color: var(--dark);
         }
 
-        /* Улучшенный бокс для фото в About */
         .about-image {
             background: var(--glass-bg);
             backdrop-filter: var(--blur);
@@ -726,7 +723,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Улучшенная секция Vote Reminder (Jetzt Unterstützen) */
+        /* Улучшенная секция Vote Reminder (Поддержать сейчас) */
         .vote-reminder {
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
             backdrop-filter: var(--blur);
@@ -909,6 +906,11 @@
             color: var(--secondary);
         }
 
+        .candidate-badge.fade-in.stagger-delay-1 {
+        opacity: 1 !important;
+        animation: fadeInUp 0.8s ease forwards;
+        }
+
         /* Animations */
         @keyframes float {
             0%, 100% {
@@ -1017,19 +1019,6 @@
             color: var(--gray);
             opacity: 0.7;
         }
-
-        .lang-switch {
-            border: 1px solid rgba(99,102,241,0.4);
-            border-radius: 30px;
-            padding: 0.4rem 1rem;
-            font-size: 0.9rem;
-        }
-
-        .candidate-badge.fade-in.stagger-delay-1 {
-            opacity: 1 !important;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
 
         /* Responsive */
         @media (max-width: 1024px) {
@@ -1194,7 +1183,6 @@
                 padding: 2.5rem 1.5rem;
             }
             
-            /* Анимация для элементов меню при открытии */
             .nav-links.active .nav-link {
                 animation: fadeInUp 0.5s ease forwards;
                 animation-fill-mode: both;
@@ -1222,8 +1210,8 @@
                     <img src="home.svg" alt="Home">
                 </div>
                 <div class="logo-text">
-                    <div class="logo-name">Mykhaylo Tretyakov</div>
-                    <div class="logo-subtitle">Kandidat №42</div>
+                    <div class="logo-name">Михаил Третьяков</div>
+                    <div class="logo-subtitle">Кандидат №42</div>
                 </div>
             </a>
             
@@ -1232,14 +1220,13 @@
             </button>
             
             <nav class="nav-links" id="navLinks">
-                <a href="#about" class="nav-link">Über Mich</a>
-                <a href="#details" class="nav-link">Meine Ziele</a>
-                <a href="#vote" class="nav-link">Wie Wählen?</a>
-                <a href="#stimmabgabe" class="nav-cta">Jetzt Unterstützen</a>
-                <a href="ru.html" class="nav-cta">RU</a>
+                <a href="#about" class="nav-link">Обо мне</a>
+                <a href="#details" class="nav-link">Мои цели</a>
+                <a href="#vote" class="nav-link">Как голосовать?</a>
+                <a href="#stimmabgabe" class="nav-cta">Поддержать</a>
+                <a href="index.html" class="nav-cta">DE</a>
                 <a href="ua.html" class="nav-cta">UA</a>
             </nav>
-
         </div>
     </header>
 
@@ -1248,13 +1235,13 @@
         <div class="container">
             <div class="hero-content fade-in">
                 <div class="hero-text">
-                    <h1>Mykhaylo (Mischa) Tretyakov</h1>
-                    <p>Kandidat für das Jugendparlament Braunschweig. Ich setze mich für eine Stadt ein, in der junge Menschen mitbestimmen und ihre Zukunft aktiv gestalten können.</p>
-                    <div class="candidate-badge fade-in stagger-delay-1 float">Kandidat №42</div>
+                    <h1>Михаил Третьяков</h1>
+                    <p>Кандидат в Молодежный парламент Брауншвейга. Я выступаю за город, в котором молодые люди могут участвовать в принятии решений и активно формировать свою будущую жизнь.</p>
+                    <div class="candidate-badge fade-in stagger-delay-1 float">Кандидат №42</div>
                 </div>
                 <div class="hero-image fade-in stagger-delay-2">
                     <div class="image-wrapper">
-                        <img src="dein-foto.png" alt="Mykhaylo Tretyakov" class="candidate-photo">
+                        <img src="dein-foto.png" alt="Михаил Третьяков" class="candidate-photo">
                     </div>
                     <div class="image-decoration"></div>
                 </div>
@@ -1266,24 +1253,23 @@
     <section class="about" id="about">
         <div class="container">
             <div class="section-header fade-in">
-                <div class="section-subtitle">PORTFOLIO</div>
-                <h2 class="section-title">Über <span>Mich</span></h2>
-                <p class="section-desc">Schüler des Gymnasiums Raabeschule. Mein Name ist Mykhaylo, aber du kannst mich auch Mischa nennen, so nennen mich meine Freunde.</p>
+                <div class="section-subtitle">ПОРТФОЛИО</div>
+                <h2 class="section-title">Обо <span>мне</span></h2>
+                <p class="section-desc">Ученик Гимназии Раабешуле</p>
             </div>
             
             <div class="about-content">
                 <div class="about-text fade-in">
-                    <p>Ich bin 15 Jahre alt und wurde in Odessa, am Schwarzen Meer in der Ukraine, geboren. Seit 2023 lebe ich nun dauerhaft in Deutschland. Meine Familie und ich lieben dieses Land sehr und respektieren seine Traditionen. Hier habe ich viele Freunde und enge Verwandte.</p>
+                    <p>Мне 15 лет, я родился в Одессе, на берегу Черного моря в Украине. С 2023 года я постоянно живу в Германии. Моя семья и я очень любим эту страну и уважаем ее традиции. Здесь у меня много друзей и близких родственников.</p>
                     
-                    <p>Ich besuche die 10. Klasse des Gymnasiums Raabeschule. Auch mein jüngerer Bruder geht auf diese Schule.</p>
+                    <p>Я учусь в 10 классе гимназии Raabeschule. Мой младший брат тоже учится в этой школе.</p>
                     
-                    <p>Zu meinen Hobbys gehören Skifahren und Schwimmen. Ich bin Mitglied der DLRG, der Deutschen Lebens-Rettungs-Gesellschaft.</p>
+                    <p>Мои хобби включают катание на лыжах и плавание. Я являюсь членом DLRG, Немецкого общества спасателей на водах.</p>
                     
-                    <p>Seit mehr als 5 Jahren besuche ich eine IT-Akademie. Im letzten Jahr habe ich ein Zwischenzeugnis erhalten, das meine Fähigkeiten in verschiedenen Programmiersprachen wie Python, HTML und CSS bestätigt.</p>
+                    <p>Более 5 лет я посещаю IT-академию. В прошлом году я получил промежуточный сертификат, подтверждающий мои навыки в различных языках программирования, таких как Python, HTML и CSS.</p>
                     
-                    <p>Mein Lebensweg hat dazu geführt, dass ich vor meiner Ankunft in Deutschland bereits mehrere Schulen in verschiedenen Ländern besucht habe. Ich glaube, dass ich dadurch interessante und wertvolle Erfahrungen gesammelt habe, die ich in das Leben der Schülerinnen und Schüler in Braunschweig einbringen könnte. Ein frischer Blick von außen und gute Ideen sind immer hilfreich!</p>
+                    <p>Мой жизненный путь привел к тому, что до приезда в Германию я уже посещал несколько школ в разных странах. Я считаю, что благодаря этому я приобрел интересный и ценный опыт, который я мог бы привнести в жизнь учеников в Брауншвейге. Свежий взгляд со стороны и хорошие идеи всегда полезны!</p>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -1292,49 +1278,49 @@
     <section class="details" id="details">
         <div class="container">
             <div class="section-header fade-in">
-                <div class="section-subtitle">MEINE VISION FÜR BRAUNSCHWEIG</div>
-                <h2 class="section-title">Meine <span>Hauptziele</span></h2>
-                <p class="section-desc">Als Mitglied des Jugendparlaments werde ich mich für folgende Schwerpunkte einsetzen, um Braunschweig noch lebenswerter für junge Menschen zu gestalten.</p>
+                <div class="section-subtitle">МОЁ ВИДЕНИЕ БРАУНШВЕЙГА</div>
+                <h2 class="section-title">Мои <span>главные цели</span></h2>
+                <p class="section-desc">Как член Молодежного парламента я буду заниматься следующими вопросами, чтобы сделать Брауншвейг еще более привлекательным для молодых людей.</p>
             </div>
             
             <div class="details-text fade-in" style="margin-bottom: 3rem; background: var(--glass-bg); backdrop-filter: blur(10px); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--glass-border);">
-                <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--dark);">Mir gefällt vieles am deutschen Bildungssystem. Trotzdem bin ich, als ich vor zwei Jahren an meine jetzige Schule gekommen bin, auf einige Schwierigkeiten gestoßen. Am Anfang dachte ich, dass diese Probleme nur mich betreffen. Später habe ich jedoch festgestellt, dass auch meine Mitschüler, die ihr ganzes Leben in Deutschland leben und hier zur Schule gehen, mit ähnlichen Problemen konfrontiert sind.</p>
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--dark);">Мне многое нравится в немецкой системе образования. Но оказавшись два года назад в текущей школе, я столкнулся с некоторыми сложностями. Я думал, что эти проблемы были только у меня, однако выяснилось, что и мои более опытные одноклассники, которые всю свою жизнь учатся и живут в Германии, также сталкиваются с аналогичными проблемами.</p>
             </div>
             
             <div class="details-grid">
                 <div class="detail-card fade-in stagger-delay-1">
                     <div class="detail-icon">
-                        <img src="school.svg" alt="Bewertungstransparenz" class="detail-icon-svg">
+                        <img src="school.svg" alt="Прозрачность оценок" class="detail-icon-svg">
                     </div>
-                    <h3>Bewertungstransparenz</h3>
-                    <p style="margin-bottom: 1rem; color: var(--gray);">Transparente Bewertungskriterien in allen Fächern im freien Zugang</p>
-                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Ich habe festgestellt, dass die Bewertung nicht immer objektiv und nachvollziehbar ist. Besonders betrifft das die mündlichen Leistungen. Häufig entspricht die Note, die am Ende im Zeugnis steht, nicht dem, was man selbst erwartet hat oder was man für gerecht hält.</p>
-                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Dabei sind Noten von großer Bedeutung. Von ihnen kann unsere Zukunft abhängen – ob wir einen bestimmten Praktikumsplatz bekommen, eine bestimmte Ausbildung beginnen können oder an einer bestimmten Universität angenommen werden.</p>
-                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Ich würde mir wünschen, dass in den Schulregeln in Braunschweig klar und verbindlich festgelegt wird, nach welchen Kriterien in allen Schulfächern bewertet wird. Diese Kriterien sollten in Form eines zugänglichen und transparenten Dokuments veröffentlicht werden. So könnte jeder Schüler einen klaren Plan erstellen, wie er seine Endnote verbessern kann. Die Bewertung sollte nicht vom subjektiven Eindruck oder von der Stimmung der Lehrkraft abhängen.</p>
-                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Außerdem halte ich es für sinnvoll, dass an jeder Schule eine digitale Plattform, ähnlich wie zum Beispiel IServ, geführt wird, in der alle aktuellen Noten eingetragen werden – insbesondere auch die mündlichen Noten. Alternativ sollte es zumindest ein anderes transparentes System geben, in dem mündliche Leistungen regelmäßig dokumentiert und für Schüler einsehbar gemacht werden.</p>
+                    <h3>Прозрачность оценок</h3>
+                    <p style="margin-bottom: 1rem; color: var(--gray);">Прозрачные критерии оценивания по всем предметам в свободном доступе</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Я заметил, что оценки не всегда объективны и понятны. Особенно это касается устных экзаменов. Часто оценка, которая в конечном итоге ставится в табеле, не соответствует тому, что ты сам ожидал или считаешь справедливым.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">При этом оценки имеют большое значение. От них может зависеть наше будущее – получим ли мы определённую стажировку, сможем ли начать определённое обучение или будем ли приняты в определённый университет.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Я бы хотел, чтобы в школьных правилах Брауншвейга были чётко и обязательно закреплены критерии оценки по всем школьным предметам. Эти критерии должны быть опубликованы в виде доступного и прозрачного документа. Так каждый ученик сможет составить чёткий план, как улучшить свою итоговую оценку. Оценка не должна зависеть от субъективного впечатления или настроения учителя.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Кроме того, я считаю целесообразным, чтобы в каждой школе была создана цифровая платформа, аналогичная, например, IServ, в которой бы регистрировались все текущие оценки, в частности устные. В качестве альтернативы должна быть по крайней мере другая прозрачная система, в которой устные оценки регулярно документировались бы и были доступны для просмотра учащимися.</p>
                 </div>
 
                 <div class="detail-card fade-in stagger-delay-2">
                     <div class="detail-icon">
-                        <img src="laptop.svg" alt="Digitalkostenfreiheit" class="detail-icon-svg">
+                        <img src="laptop.svg" alt="Бесплатные цифровые устройства" class="detail-icon-svg">
                     </div>
-                    <h3>Digitalkostenfreiheit</h3>
-                    <p style="margin-bottom: 1rem; color: var(--gray);">Geräte für den Unterricht sollten kostenlos sein</p>
-                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Ein weiteres wichtiges Problem, das ich gemeinsam mit meinen Mitschülern sehe, ist die Notwendigkeit, teure elektronische Geräte für den Unterricht anzuschaffen. Für viele Familien stellt das eine erhebliche finanzielle Belastung dar.</p>
-                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Deshalb wäre es aus meiner Sicht richtig:</p>
-                    <p style="margin-bottom: 0.5rem; color: var(--gray); padding-left: 1.5rem;">1. einen Austausch- bzw. Leihfonds einzurichten, bei dem bestimmte Geräte kostenlos oder zu einer geringen Gebühr ausgeliehen werden können – ähnlich wie Bücher in einer Bibliothek. So hätten alle Schüler die gleichen Voraussetzungen für den Unterricht.</p>
-                    <p style="margin-bottom: 0.8rem; color: var(--gray); padding-left: 1.5rem;">2. die technischen Systemanforderungen an allen Schulen in Braunschweig zu vereinheitlichen. Dadurch würde vermieden, dass ein Schüler bei einem Schulwechsel gezwungen ist, ein neues Gerät zu kaufen, nur weil andere Programme oder andere technische Standards verlangt werden.</p>
+                    <h3>Цифровая доступность</h3>
+                    <p style="margin-bottom: 1rem; color: var(--gray);">Устройства для обучения должны быть бесплатными</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Ещё одна важная проблема, которую я разделяю со своими одноклассниками, – необходимость приобретать дорогие электронные устройства, необходимые для учебного процесса. Для многих семей это серьёзное финансовое бремя.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Поэтому, на мой взгляд, было бы правильно:</p>
+                    <p style="margin-bottom: 0.5rem; color: var(--gray); padding-left: 1.5rem;">1. создать обменный (арендный) фонд, где определённые устройства можно было бы брать в бесплатное пользование или недорогую аренду – как книги в библиотеке. Так у всех школьников будут равные условия для учёбы.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray); padding-left: 1.5rem;">2. синхронизировать системные требования во всех школах Брауншвейга. Это позволит избежать ситуации, когда ученик при переходе в другую школу вынужден покупать новое устройство только потому, что там используются другие программы или технические стандарты.</p>
                 </div>
                 
                 <div class="detail-card fade-in stagger-delay-3">
                     <div class="detail-icon">
-                        <img src="fitness.svg" alt="Bezahlbarer Sport" class="detail-icon-svg">
+                        <img src="fitness.svg" alt="Доступный спорт" class="detail-icon-svg">
                     </div>
-                    <h3>Zugänglicher Sport</h3>
-                    <p style="margin-bottom: 1rem; color: var(--gray);">Subventionen für sportliche Aktivitäten für Schülerinnen und Schüler in Braunschweig</p>
-                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Aus eigener Erfahrung habe ich erlebt, dass es schwierig sein kann, bestimmte Sportarten – zum Beispiel Schwimmen – regelmäßig auszuüben. Oft ist man gezwungen, einem Verein beizutreten. In vielen Vereinen gibt es jedoch keine freien Plätze, und man muss sich auf eine Warteliste setzen lassen und lange warten.</p>
-                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Gleichzeitig bleibt der Preis nur dann relativ niedrig, wenn man Mitglied in einem solchen Verein ist. Sportangebote in modernen Fitnessstudios oder in privaten Kursen sind ohne die Unterstützung eines Vereins deutlich teurer. Und selbst wenn es Ermäßigungen für Schüler gibt, fallen diese in der Praxis oft gering aus.</p>
-                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Ein positives Beispiel zeigt, dass Veränderungen möglich sind: Durch die Initiative des Jugendparlaments wurde der Preis für das Schülerticket im öffentlichen Nahverkehr gesenkt. Ich bin der Meinung, dass ähnliche Subventionen aus dem städtischen Haushalt auch für sportliche Aktivitäten erreicht werden könnten – zum Beispiel für die Nutzung von Fitnessstudios oder anderen Sporteinrichtungen in Braunschweig.</p>
+                    <h3>Доступный спорт</h3>
+                    <p style="margin-bottom: 1rem; color: var(--gray);">Хочу добиться субсидий на спортивные занятия для учащихся Брауншвейга</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Из собственного опыта я знаю, что заниматься некоторыми видами спорта, например плаванием, можно только вступив в определённый клуб (Verein). Во многих клубах нет свободных мест, приходится записываться в лист ожидания и долго ждать.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">При этом цена остаётся доступной, только если ты член такого клуба. Занятия в современных фитнес-студиях или частных секциях без поддержки клуба стоят значительно дороже. И даже если предлагаются скидки для школьников, они зачастую невелики.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Положительный пример уже есть: благодаря действиям Молодёжного парламента была снижена цена проездного билета на общественный транспорт для учащихся. Я убеждён, что аналогичных субсидий из городского бюджета можно добиться и для оплаты спортивных занятий – например, в фитнес-студиях или других спортивных учреждениях Брауншвейга.</p>
                 </div>
             </div>
         </div>
@@ -1344,36 +1330,36 @@
     <section class="voting" id="vote">
         <div class="container">
             <div class="section-header fade-in">
-                <div class="section-subtitle">DEINE STIMME ZÄHLT</div>
-                <h2 class="section-title">So <span>kannst du wählen</span></h2>
-                <p class="section-desc">Die Wahl zum Jugendparlament Braunschweig findet im Zeitraum 23. Februar bis 6. März 2026 statt. Alle Jugendlichen zwischen 14 und 21 Jahren mit Wohnsitz in Braunschweig sind wahlberechtigt.</p>
+                <div class="section-subtitle">ТВОЙ ГОЛОС ИМЕЕТ ЗНАЧЕНИЕ</div>
+                <h2 class="section-title">Как <span>можно голосовать</span></h2>
+                <p class="section-desc">Выборы в Молодёжный парламент Брауншвейга пройдут в период с 23 февраля по 6 марта 2026 года. Право голоса имеют все молодые люди в возрасте от 14 до 21 года, проживающие в Брауншвейге.</p>
             </div>
             
             <div class="voting-steps">
                 <div class="step fade-in stagger-delay-1">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">Wahlberechtigung prüfen</h3>
-                    <p class="step-desc">Du bist zwischen 14 und 21 Jahre alt und hast deinen Wohnsitz in Braunschweig? Dann bist du wahlberechtigt! Ein Personalausweis oder Schülerausweis genügt.</p>
+                    <h3 class="step-title">Проверь, имеешь ли ты право голоса</h3>
+                    <p class="step-desc">Тебе от 14 до 21 года и твоё место жительства находится в Брауншвейге? Тогда ты имеешь право голосовать! Достаточно удостоверения личности или ученического билета.</p>
                 </div>
                 
                 <div class="step fade-in stagger-delay-2">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Informieren & Entscheiden</h3>
-                    <p class="step-desc">Lerne die Kandidat:innen und ihre Ziele. Jede Stimme ist wichtig für die Zukunft unserer Stadt. Entscheide, wer deine Interessen am besten vertritt. Du kannst dich maximal für 5 verschiedene Personen entscheiden.</p>
+                    <h3 class="step-title">Узнай кандидатов и прими решение</h3>
+                    <p class="step-desc">Познакомься с кандидатами и их целями. Каждый голос важен для будущего нашего города. Реши, кто лучше всего представляет твои интересы. Ты можешь отдать свой голос максимум за 5 разных кандидатов.</p>
                 </div>
                 
                 <div class="step fade-in stagger-delay-3">
                     <div class="step-number">3</div>
-                    <h3 class="step-title">Deine Stimme abgeben</h3>
-                    <p class="step-desc">Bis 20. Februar bekommst du einen Brief mit deinem eigenem Code, den du auf der offiziellen <a class="open" href="https://thezukunft.de/jugendparlament/" target="_blank">Wahlplattform</a> eintragen kannst. Da kannst du deine Stimme abgeben.</p>
+                    <h3 class="step-title">Отдай свой голос</h3>
+                    <p class="step-desc">До 20 февраля ты получишь письмо с твоим персональным кодом, который нужно ввести на официальной <a class="open" href="https://thezukunft.de/jugendparlament/" target="_blank">платформе для голосования</a>. Там ты сможешь отдать свой голос.</p>
                 </div>
             </div>
             
             <div class="vote-reminder fade-in stagger-delay-4" id="stimmabgabe">
-                <h3>Wichtig bei der Stimmabgabe:</h3>
-                <p>Wenn du mich, Mykhaylo Tretyakov, unterstützen möchtest, gib bitte folgende Nummer an:</p>
+                <h3>Важно при голосовании:</h3>
+                <p>Если ты хочешь поддержать меня, Михаила Третьякова, укажи, пожалуйста, следующий номер:</p>
                 <span class="highlight-number">42</span>
-                <p>Mit deiner Stimme für Kandidat №42 unterstützt du meine Vision für ein jugendgerechtes Braunschweig!</p>
+                <p>Твоим голосом за кандидата №42 ты поддержишь моё видение города, дружественного к молодёжи!</p>
             </div>
         </div>
     </section>
@@ -1384,7 +1370,7 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <div class="footer-logo">Mykhaylo Tretyakov</div>
-                    <p>Kandidat für das Jugendparlament Braunschweig.</p>
+                    <p>Кандидат в Молодёжный парламент Брауншвейга.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Instagram"><img src="insta.svg" class="detail-icon-svg"></a>
                     </div>
@@ -1392,29 +1378,29 @@
                 
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4>Navigation</h4>
-                        <a href="#home">Startseite</a>
-                        <a href="#about">Über Mich</a>
-                        <a href="#details">Meine Ziele</a>
-                        <a href="#vote">Wie Wählen?</a>
+                        <h4>Навигация</h4>
+                        <a href="#home">Главная</a>
+                        <a href="#about">Обо мне</a>
+                        <a href="#details">Мои цели</a>
+                        <a href="#vote">Как голосовать?</a>
                     </div>
                     
                     <div class="footer-column">
-                        <h4>Kontakt</h4>
-                        <a href="mailto:m.tretyakov@proton.me">E-Mail senden</a>
+                        <h4>Контакты</h4>
+                        <a href="mailto:m.tretyakov@proton.me">Написать письмо</a>
                     </div>
 
                     <div class="footer-column">
-                        <h4>Rechtliches</h4>
-                        <a href="impressum.html">Impressum</a>
-                        <a href="datenschutz.html">Datenschutz</a>
+                        <h4>Правовая информация</h4>
+                        <a href="impressum.html">Выходные данные</a>
+                        <a href="datenschutz.html">Защита данных</a>
                     </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2026 Mykhaylo Tretyakov | Kandidat №42 für das Jugendparlament Braunschweig</p>
-                <p>Diese Seite ist eine offizielle Kandidatenpräsentation für die Jugendparlamentswahl 2026.</p>
+                <p>&copy; 2026 Михаил Третьяков | Кандидат №42 в Молодёжный парламент Брауншвейга</p>
+                <p>Эта страница является официальной презентацией кандидата на выборах в Молодёжный парламент 2026.</p>
             </div>
         </div>
     </footer>
