@@ -416,6 +416,16 @@ figure {
   letter-spacing: 0;
 }
 
+.hero h1.hero-logo-heading {
+  max-width: 560px;
+  line-height: 1;
+}
+
+.hero-logo {
+  width: min(100%, 520px);
+  height: auto;
+}
+
 .lead {
   max-width: 650px;
   margin-bottom: 36px;
