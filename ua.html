@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Михайло Третьяков | Кандидат №42 Молодіжний парламент Брауншвайґа</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <style>
+        /* Локальні шрифти */
+        @font-face {
+            font-family: 'Manrope';
+            src: url('Manrope-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Space Grotesk';
+            src: url('SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --white: #ffffff;
+            --radius: 20px;
+            --radius-lg: 30px;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --blur: blur(20px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--dark);
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #fdf4ff 100%);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .details-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        /* Header & Navigation - Glass Effect */
+        header {
+            position: fixed;
+            top: 2%;
+            width: 96%;
+            background: var(--glass-bg);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition);
+            border-radius: var(--radius-lg);
+            left: 2%;
+            border: 1px solid var(--glass-border);
+        }
+
+        header.scrolled {
+            padding: 0.8rem 0;
+            top: 1%;
+            width: 98%;
+            left: 1%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 12px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 4px 15px rgba(99, 102, 241, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .logo-icon img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 8px 25px rgba(99, 102, 241, 0.4),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.01em;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 4px 15px rgba(99, 102, 241, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 8px 25px rgba(99, 102, 241, 0.4),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 0.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            width: 45px;
+            height: 45px;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 12rem;
+            padding-bottom: 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 70% 30%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.03em;
+            line-height: 1;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+
+        .candidate-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: var(--radius);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-top: 1rem;
+            transition: var(--transition);
+            letter-spacing: -0.02em;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .candidate-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0.8;
+            z-index: -1;
+        }
+
+        .candidate-badge:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(99, 102, 241, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            background: var(--glass-bg);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            z-index: 1;
+        }
+
+        .image-wrapper:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 
+                0 30px 60px rgba(99, 102, 241, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .candidate-photo {
+            width: 85%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .image-wrapper:hover .candidate-photo {
+            transform: scale(1.02);
+        }
+
+        .image-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 20px;
+            z-index: 0;
+            bottom: -20px;
+            left: -20px;
+            transform: rotate(15deg);
+            opacity: 0.7;
+            filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .image-wrapper:hover .image-decoration {
+            transform: rotate(25deg) scale(1.1);
+            opacity: 0.9;
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-subtitle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0.8;
+            z-index: -1;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            letter-spacing: -0.03em;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-desc {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--glass-border);
+        }
+
+        /* About Section */
+        .about {
+            position: relative;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .about-image {
+            background: var(--glass-bg);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            z-index: 1;
+        }
+
+        .about-image:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 30px 60px rgba(99, 102, 241, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Details Section */
+        .details {
+            position: relative;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .detail-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.15),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            z-index: -1;
+        }
+
+        .detail-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .detail-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .detail-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+        }
+
+        .detail-card ul {
+            list-style: none;
+        }
+
+        .detail-card li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .detail-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* Voting Section */
+        .voting {
+            position: relative;
+        }
+
+        .voting-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .step {
+            background: var(--glass-bg);
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .step:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.15),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            z-index: -1;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            border-radius: 50%;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-number::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0.8;
+            z-index: -1;
+        }
+
+        .step-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+        }
+
+        .step-desc {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Улучшенная секция Vote Reminder (Підтримати зараз) */
+        .vote-reminder {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            color: var(--dark);
+            padding: 3.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: 4rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .vote-reminder:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 30px 60px rgba(99, 102, 241, 0.2),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .vote-reminder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            z-index: -1;
+        }
+
+        .vote-reminder h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .vote-reminder p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            margin: 1.5rem 0;
+            display: block;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 1.5rem;
+            display: inline-block;
+        }
+
+        .vote-reminder .highlight-number {
+            animation: pulse 2s infinite;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-column h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-column a {
+            color: var(--gray-light);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: var(--transition);
+            padding: 0.3rem 0;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* SVG Icons Styling */
+        .detail-icon-svg {
+            width: 32px;
+            height: 32px;
+            filter: brightness(0) invert(1);
+        }
+
+        .open {
+            text-decoration: underline dotted;
+            color: var(--primary);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .open:hover {
+            color: var(--secondary);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .stagger-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .stagger-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .stagger-delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .stagger-delay-4 { animation-delay: 0.4s; opacity: 0; }
+        
+        /* Улучшенный placeholder для фото */
+        .placeholder-img {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            height: 100%;
+            width: 100%;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+        }
+
+        .placeholder-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .placeholder-img::before {
+            content: "📸";
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .placeholder-img p {
+            color: var(--gray);
+            font-weight: 500;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .placeholder-img .subtext {
+            font-size: 0.9rem;
+            color: var(--gray);
+            opacity: 0.7;
+        }
+
+        .candidate-badge.fade-in.stagger-delay-1 {
+        opacity: 1 !important;
+        animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content, .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+            
+            .image-wrapper {
+                height: 400px;
+            }
+            
+            .voting-steps, .details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+        }
+
+
+        
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(15, 23, 42, 0.95);
+                backdrop-filter: blur(30px);
+                -webkit-backdrop-filter: blur(30px);
+                flex-direction: column;
+                padding: 5rem 2rem 2rem;
+                box-shadow: var(--glass-shadow);
+                z-index: 999;
+                justify-content: flex-start;
+                gap: 1.5rem;
+                border-radius: 0;
+                border: none;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                display: flex;
+                animation: slideIn 0.3s ease forwards;
+            }
+            
+            .nav-links.closing {
+                animation: slideOut 0.3s ease forwards;
+            }
+            
+            .nav-link {
+                color: var(--white);
+                font-size: 1.3rem;
+                padding: 1rem;
+                text-align: center;
+                width: 100%;
+                border-radius: var(--radius);
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
+                margin-bottom: 0.5rem;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .nav-link:hover {
+                color: var(--white);
+                background: rgba(99, 102, 241, 0.3);
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+            
+            .nav-link::after {
+                display: none;
+            }
+            
+            .nav-cta {
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                padding: 1rem 2rem;
+                width: 100%;
+                text-align: center;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                order: 1;
+            }
+            
+            .nav-cta:hover {
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 
+                    0 10px 30px rgba(99, 102, 241, 0.5),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                position: relative;
+            }
+            
+            .mobile-menu-btn span {
+                transition: transform 0.3s ease;
+            }
+            
+            .mobile-menu-btn.active span {
+                transform: rotate(90deg);
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .voting-steps, .details-grid, .footer-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .hero {
+                padding-top: 10rem;
+            }
+            
+            .image-wrapper {
+                height: 350px;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+            
+            .highlight-number {
+                font-size: 4rem;
+            }
+
+            .vote-reminder {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .nav-links.active .nav-link {
+                animation: fadeInUp 0.5s ease forwards;
+                animation-fill-mode: both;
+                opacity: 0;
+            }
+            
+            .nav-links.active .nav-link:nth-child(1) { animation-delay: 0.1s; }
+            .nav-links.active .nav-link:nth-child(2) { animation-delay: 0.2s; }
+            .nav-links.active .nav-link:nth-child(3) { animation-delay: 0.3s; }
+            .nav-links.active .nav-cta { 
+                animation: fadeInUp 0.5s ease forwards;
+                animation-delay: 0.4s;
+                animation-fill-mode: both;
+                opacity: 0;
+            }
+        }
+
+        /* Countdown Clock Section */
+        .countdown-section {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.25));
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .countdown-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .countdown-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+        }
+
+        .countdown-title span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .countdown-display {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .countdown-display a.nav-cta {
+            grid-column: 1 / -1;
+            justify-self: center;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .countdown-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--gray);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            .countdown-section {
+                padding: 2rem 0;
+            }
+
+            .countdown-title {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .countdown-display {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .countdown-item {
+                padding: 1.5rem;
+            }
+
+            .countdown-number {
+                font-size: 2.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.75rem;
+            }
+        }
+
+        .zur-wahlplattform {
+            width: 100%;
+            font-size: 24px;
+            font-family: 'Space Grotesk';
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <img src="home.svg" alt="Home">
+                </div>
+                <div class="logo-text">
+                    <div class="logo-name">Михайло Третьяков</div>
+                    <div class="logo-subtitle">Кандидат №42</div>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span>☰</span>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link">Про мене</a>
+                <a href="#details" class="nav-link">Мої цілі</a>
+                <a href="#vote" class="nav-link">Як голосувати?</a>
+                <a href="#stimmabgabe" class="nav-cta">Підтримати</a>
+                <a href="/index.html" class="nav-cta">DE</a>
+                <a href="/ru.html" class="nav-cta">RU</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Countdown Clock Section -->
+    <section class="countdown-section" id="countdown">
+        <div class="container countdown-container">
+            <br>
+            <br>
+            <br>
+            <div class="countdown-display">
+                <a href="https://dialog.braunschweig.de/qp/l/jupawahl2026" class="nav-cta zur-wahlplattform">На платформу голосування</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-text">
+                    <h1>Михайло Третьяков</h1>
+                    <p>Кандидат у Молодіжний парламент Брауншвайґа. Я виступаю за місто, в якому молоді люди можуть брати участь у прийнятті рішень та активно формувати своє майбутнє.</p>
+                    <div class="candidate-badge fade-in stagger-delay-1 float">Кандидат №42</div>
+                </div>
+                <div class="hero-image fade-in stagger-delay-2">
+                    <div class="image-wrapper">
+                        <img src="dein-foto.png" alt="Михайло Третьяков" class="candidate-photo">
+                    </div>
+                    <div class="image-decoration"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-subtitle">ПОРТФОЛІО</div>
+                <h2 class="section-title">Про <span>мене</span></h2>
+                <p class="section-desc">Учень Гімназії Раабешуле</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>Мені 15 років, я народився в Одесі, на березі Чорного моря в Україні. З 2023 року я постійно живу в Німеччині. Моя сім'я і я дуже любимо цю країну та поважаємо її традиції. Тут у мене багато друзів і близьких родичів.</p>
+                    
+                    <p>Я навчаюсь у 10 класі гімназії Raabeschule. Мій молодший брат теж вчиться в цій школі.</p>
+                    
+                    <p>Мої хобі включають катання на лижах та плавання. Я є членом DLRG, Німецького товариства рятувальників на водах.</p>
+                    
+                    <p>Понад 5 років я відвідую IT-академію. Торік я отримав проміжний сертифікат, що підтверджує мої навички в різних мовах програмування, таких як Python, HTML та CSS.</p>
+                    
+                    <p>Мій життєвий шлях призвів до того, що до приїзду в Німеччину я вже відвідував кілька шкіл у різних країнах. Я вважаю, що завдяки цьому я набув цікавий та цінний досвід, який міг би привнести в життя учнів у Брауншвайзі. Свіжий погляд зі сторони та хороші ідеї завжди корисні!</p>
+                </div>
+
+                <div class="hero-image fade-in stagger-delay-2">
+                    <div class="image-wrapper">
+                        <img src="dlrg.jpg" alt="Mykhaylo Tretyakov mit seiner DLRG-Trainerin" class="candidate-photo">
+                    </div>
+                    <div class="image-decoration"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="details" id="details">
+        <div class="details-container">
+            <div class="section-header fade-in">
+                <div class="section-subtitle">МОЄ БАЧЕННЯ БРАУНШВАЙҐА</div>
+                <h2 class="section-title">Мої <span>головні цілі</span></h2>
+                <p class="section-desc">Як кандидат Молодіжного парламенту я займатимусь наступними питаннями, щоб зробити Брауншвайґ ще більш привабливим для молодих людей.</p>
+            </div>
+            
+            <div class="details-text fade-in" style="margin-bottom: 3rem; background: var(--glass-bg); backdrop-filter: blur(10px); padding: 2rem; border-radius: var(--radius); border: 1px solid var(--glass-border);">
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--dark);">Мені багато чого подобається в німецькій системі освіти. Але опинившись два роки тому в теперішній школі, я зіткнувся з деякими складнощами. Я думав, що ці проблеми були тільки в мене, однак виявилося, що й мої більш досвідчені однокласники, які все своє життя навчаються і живуть у Німеччині, також стикаються з аналогічними проблемами.</p>
+            </div>
+            
+            <div class="details-grid">
+                <div class="detail-card fade-in stagger-delay-1">
+                    <div class="detail-icon">
+                        <img src="school.svg" alt="Прозорість оцінювання" class="detail-icon-svg">
+                    </div>
+                    <h3>Прозорість оцінювання</h3>
+                    <p style="margin-bottom: 1rem; color: var(--gray);">Прозорі критерії оцінювання з усіх предметів у вільному доступі</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Я помітив, що оцінки не завжди об'єктивні та зрозумілі. Особливо це стосується усних відповідей. Часто оцінка, яка зрештою виставляється в табелі, не відповідає тому, що ти сам очікував або вважаєш справедливим.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">При цьому оцінки мають велике значення. Від них може залежати наше майбутнє – чи отримаємо ми певне стажування, чи зможемо розпочати певне навчання або чи будемо прийняті до певного університету.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Я хотів би, щоб у шкільних правилах Брауншвейга були чітко та обов'язково закріплені критерії оцінювання з усіх шкільних предметів. Ці критерії мають бути опубліковані у вигляді доступного та прозорого документа. Так кожен учень зможе скласти чіткий план, як покращити свою підсумкову оцінку. Оцінка не повинна залежати від суб'єктивного враження чи настрою вчителя.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Крім того, я вважаю доцільним, щоб у кожній школі була створена цифрова платформа, аналогічна, наприклад, IServ, в якій би реєструвалися всі поточні оцінки, зокрема усні. Як альтернатива має бути принаймні інша прозора система, в якій усні оцінки регулярно документувалися б і були доступні для перегляду учнями.</p>
+                </div>
+
+                <div class="detail-card fade-in stagger-delay-2">
+                    <div class="detail-icon">
+                        <img src="laptop.svg" alt="Безкоштовні цифрові пристрої" class="detail-icon-svg">
+                    </div>
+                    <h3>Цифрова доступність</h3>
+                    <p style="margin-bottom: 1rem; color: var(--gray);">Пристрої для навчання мають бути безкоштовними</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Ще одна важлива проблема, яку я поділяю зі своїми однокласниками, – необхідність купувати дорогі електронні пристрої, необхідні для навчального процесу. Для багатьох сімей це серйозний фінансовий тягар.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Тому, на мою думку, було б правильно:</p>
+                    <p style="margin-bottom: 0.5rem; color: var(--gray); padding-left: 1.5rem;">1. створити обмінний (орендний) фонд, де певні пристрої можна було б брати в безкоштовне користування або недорогу оренду – як книги в бібліотеці. Так у всіх учнів будуть рівні умови для навчання.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray); padding-left: 1.5rem;">2. синхронізувати системні вимоги у всіх школах Брауншвайґа. Це дозволить уникнути ситуації, коли учень при переході до іншої школи змушений купувати новий пристрій лише тому, що там використовуються інші програми або технічні стандарти.</p>
+                </div>
+                
+                <div class="detail-card fade-in stagger-delay-3">
+                    <div class="detail-icon">
+                        <img src="fitness.svg" alt="Доступний спорт" class="detail-icon-svg">
+                    </div>
+                    <h3>Доступний спорт</h3>
+                    <p style="margin-bottom: 1rem; color: var(--gray);">Хочу добитися субсидій на спортивні заняття для учнів Брауншвайґа</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">З власного досвіду я знаю, що займатися деякими видами спорту, наприклад плаванням, можна тільки вступивши до певного клубу (Verein). У багатьох клубах немає вільних місць, доводиться записуватися до листа очікування і довго чекати.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">При цьому ціна залишається доступною, тільки якщо ти член такого клубу. Заняття в сучасних фітнес-студіях або приватних секціях без підтримки клубу коштують значно дорожче. І навіть якщо пропонуються знижки для школярів, вони часто невеликі.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Позитивний приклад вже є: завдяки діям Молодіжного парламенту було знижено ціну проїзного квитка на громадський транспорт для учнів. Я переконаний, що аналогічних субсидій з міського бюджету можна добитися і для оплати спортивних занять – наприклад, у фітнес-студіях або інших спортивних установах Брауншвайґа.</p>
+                </div>
+
+                <div class="detail-card fade-in stagger-delay-4">
+                    <div class="detail-icon">
+                        <img src="sprache.svg" alt="Förderung von Integration" class="detail-icon-svg">
+                    </div>
+                    <h3>Підтримка інтеграції</h3>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Більше підтримки для підлітків, які вивчають німецьку мову -- це важливо для успішного навчання і інтеграції.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Інформаційна підтримка для сімей, які нещодавно приїхали -- багато сімей просто не знають про можливості, які існують для дітей і підлітків.</p>
+                    <p style="margin-bottom: 0.8rem; color: var(--gray);">Більше спільних заходів для підлітків різних культур -- щоб легше інтегруватися, знаходити друзів і почуватися частиною суспільства.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voting Section -->
+    <section class="voting" id="vote">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-subtitle">ТВІЙ ГОЛОС МАЄ ЗНАЧЕННЯ</div>
+                <h2 class="section-title">Як <span>можна голосувати</span></h2>
+                <p class="section-desc">Вибори до Молодіжного парламенту Брауншвайґа відбудуться в період з 23 лютого по 6 березня 2026 року. Право голосу мають усі молоді люди віком від 14 до 21 року, які проживають у Брауншвайґу.</p>
+            </div>
+            
+            <div class="voting-steps">
+                <div class="step fade-in stagger-delay-1">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Перевір, чи маєш ти право голосу</h3>
+                    <p class="step-desc">Тобі від 14 до 21 року і твоє місце проживання знаходиться в Брауншвайґу? Тоді ти маєш право голосувати! Достатньо посвідчення особи або учнівського квитка.</p>
+                </div>
+                
+                <div class="step fade-in stagger-delay-2">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Дізнайся про кандидатів та прийми рішення</h3>
+                    <p class="step-desc">Познайомся з кандидатами та їхніми цілями. Кожен голос важливий для майбутнього нашого міста. Виріши, хто найкраще представляє твої інтереси. Ти можеш віддати свій голос максимум за 5 різних кандидатів.</p>
+                </div>
+                
+                <div class="step fade-in stagger-delay-3">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Віддай свій голос</h3>
+                    <p class="step-desc">До 20 лютого ти отримаєш листа з твоїм персональним кодом, який потрібно ввести на офіційній <a class="open" href="https://thezukunft.de/jugendparlament/" target="_blank">платформі для голосування</a>. Там ти зможеш віддати свій голос.</p>
+                </div>
+            </div>
+            
+            <div class="vote-reminder fade-in stagger-delay-4" id="stimmabgabe">
+                <h3>Важливо при голосуванні:</h3>
+                <p>Якщо ти хочеш підтримати мене, Михайла Третьякова, вкажи, будь ласка, наступний номер:</p>
+                <span class="highlight-number">42</span>
+                <p>Твоїм голосом за кандидата №42 ти підтримаєш моє бачення міста, дружнього до молоді!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">Mykhaylo Tretyakov</div>
+                    <p>Кандидат у Молодіжний парламент Брауншвайґа.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><img src="insta.svg" class="detail-icon-svg"></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Навігація</h4>
+                        <a href="#home">Головна</a>
+                        <a href="#about">Про мене</a>
+                        <a href="#details">Мої цілі</a>
+                        <a href="#vote">Як голосувати?</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Контакти</h4>
+                        <a href="mailto:m.tretyakov@proton.me">Надіслати листа</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Правова інформація</h4>
+                        <a href="/impressum.html">Вихідні дані</a>
+                        <a href="/datenschutz.html">Захист даних</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Михайло Третьяков | Кандидат №42 у Молодіжний парламент Брауншвайґа</p>
+                <p>Ця сторінка є офіційною презентацією кандидата на виборах до Молодіжного парламенту 2026.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Countdown Timer Function
+            function updateCountdown() {
+                const targetDate = new Date('February 23, 2026 00:00:00').getTime();
+                
+                const countdownInterval = setInterval(() => {
+                    const now = new Date().getTime();
+                    const distance = targetDate - now;
+                    
+                    if (distance < 0) {
+                        document.getElementById('days').textContent = '00';
+                        document.getElementById('hours').textContent = '00';
+                        document.getElementById('minutes').textContent = '00';
+                        document.getElementById('seconds').textContent = '00';
+                        clearInterval(countdownInterval);
+                        return;
+                    }
+                    
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                    document.getElementById('days').textContent = String(days).padStart(2, '0');
+                    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+                }, 1000);
+            }
+            
+            updateCountdown();
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            const body = document.body;
+            
+            if (mobileMenuBtn && navLinks) {
+                let isMenuOpen = false;
+                
+                function openMenu() {
+                    isMenuOpen = true;
+                    navLinks.classList.remove('closing');
+                    navLinks.classList.add('active');
+                    mobileMenuBtn.classList.add('active');
+                    mobileMenuBtn.innerHTML = '<span>✕</span>';
+                    body.style.overflow = 'hidden';
+                }
+                
+                function closeMenu() {
+                    isMenuOpen = false;
+                    navLinks.classList.add('closing');
+                    mobileMenuBtn.classList.remove('active');
+                    
+                    setTimeout(() => {
+                        navLinks.classList.remove('active', 'closing');
+                        mobileMenuBtn.innerHTML = '<span>☰</span>';
+                        body.style.overflow = '';
+                    }, 300);
+                }
+                
+                mobileMenuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    if (!isMenuOpen) {
+                        openMenu();
+                    } else {
+                        closeMenu();
+                    }
+                });
+                
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (isMenuOpen) {
+                            closeMenu();
+                        }
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (isMenuOpen && 
+                        !navLinks.contains(e.target) && 
+                        !mobileMenuBtn.contains(e.target)) {
+                        closeMenu();
+                    }
+                });
+                
+                // Close menu on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (isMenuOpen && e.key === 'Escape') {
+                        closeMenu();
+                    }
+                });
+            }
+            
+            // Header scroll effect
+            const header = document.getElementById('header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // Animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all elements with fade-in class
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset;
+                        const headerOffset = 100;
+                        
+                        window.scrollTo({
+                            top: offsetPosition - headerOffset,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
