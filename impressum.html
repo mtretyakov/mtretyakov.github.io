@@ -1,482 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum | Mykhaylo Tretyakov Kandidat №42</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
-    <style>
-        /* Локальные шрифты */
-        @font-face {
-            font-family: 'Manrope';
-            src: url('Manrope-VariableFont_wght.ttf') format('truetype');
-            font-weight: 100 900;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Space Grotesk';
-            src: url('SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
-            font-weight: 100 900;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        :root {
-            --primary: #6366f1;
-            --secondary: #8b5cf6;
-            --accent: #06b6d4;
-            --glass-bg: rgba(255, 255, 255, 0.15);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --gray-light: #e2e8f0;
-            --white: #ffffff;
-            --radius: 20px;
-            --radius-lg: 30px;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --blur: blur(20px);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-
-        body {
-            font-family: 'Manrope', sans-serif;
-            color: var(--dark);
-            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #fdf4ff 100%);
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-            position: relative;
-            padding: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            color: var(--dark);
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 3rem;
-            background: var(--glass-bg);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .container:hover {
-            box-shadow: 0 30px 60px rgba(99, 102, 241, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            display: inline-block;
-        }
-
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1.2rem;
-            color: var(--dark);
-            position: relative;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--gray);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        strong {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: var(--transition);
-            font-weight: 600;
-            position: relative;
-        }
-
-        a:hover {
-            color: var(--secondary);
-            text-decoration: underline;
-        }
-
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            margin-bottom: 2rem;
-            gap: 0.5rem;
-        }
-
-        .back-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
-            text-decoration: none;
-            color: white;
-        }
-
-        .back-button span {
-            font-size: 1.2rem;
-        }
-
-        .header-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .logo-icon {
-            width: 55px;
-            height: 55px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border-radius: 15px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .logo-icon:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
-        }
-
-        .contact-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--glass-border);
-            margin: 2rem 0;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.15);
-        }
-
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-        }
-
-        .contact-card p {
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-            padding-left: 0.5rem;
-        }
-
-        .contact-card p:last-child {
-            margin-bottom: 0;
-        }
-
-        .source {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--glass-border);
-            font-size: 0.9rem;
-            color: var(--gray);
-            text-align: center;
-        }
-
-        .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
-            backdrop-filter: blur(10px);
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--primary);
-            border: 1px solid var(--glass-border);
-            margin-bottom: 1rem;
-        }
-
-        /* Анимации */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-                align-items: flex-start;
-            }
-
-            .container {
-                padding: 1.8rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-                margin-top: 2rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .back-button {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .header-nav {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: flex-start;
-            }
-
-            .logo-icon {
-                align-self: flex-end;
-            }
-
-            .contact-card p {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 1.5rem;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .contact-card {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Версия для печати */
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-
-            .container {
-                box-shadow: none;
-                border: 1px solid #ddd;
-                backdrop-filter: none;
-                background: white;
-            }
-
-            .back-button {
-                display: none;
-            }
-
-            .logo-icon {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#304ffe">
+  <title>Impressum | Mykhaylo Tretyakov Kandidat №42</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css?v=state-brutal-1">
 </head>
-<body>
-    <div class="container fade-in">
-        <div class="header-nav">
-            <a href="index.html#home" class="back-button">
-                <span>←</span> Zurück zur Hauptseite
-            </a>
-        </div>
-
-        <h1>
-            Impressum
-        </h1>
-
-        <div class="badge">Angaben gemäß §5 TMG</div>
-
-        <div class="contact-card">
-            <p style="font-size: 1.2rem; font-weight: 700; color: var(--dark); margin-bottom: 1rem;">Mykhaylo Tretyakov</p>
-            <p>Kamp 10A<br>38122 Braunschweig<br>Deutschland</p>
-        </div>
-
-        <h2>Kontakt</h2>
-        
-        <div class="contact-card">
-            <p><strong style="color: var(--primary);">Telefon:</strong> 0175 7432903</p>
-            <p><strong style="color: var(--primary);">E-Mail:</strong> <a href="mailto:mishatret2010@gmail.com">mishatret2010@gmail.com</a></p>
-        </div>
-
-        <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(99, 102, 241, 0.05); border-radius: var(--radius);">
-            <p style="margin-bottom: 0; font-size: 0.95rem; color: var(--gray);">
-                <strong style="color: var(--dark);">Verantwortlich für den Inhalt nach §55 Abs. 2 RStV:</strong><br>
-                Mykhaylo Tretyakov, Kamp 10A, 38122 Braunschweig
-            </p>
-        </div>
-
-        <div style="margin-top: 2rem;">
-            <p style="font-size: 0.95rem; color: var(--gray);">
-                Diese Webseite dient der persönlichen Präsentation als Kandidat für das Jugendparlament Braunschweig und verfolgt keine kommerziellen Zwecke.
-            </p>
-        </div>
-
-        <div class="source">
-            <p>Quelle: <a href="https://www.e-recht24.de" target="_blank">eRecht24.de</a></p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">&copy; 2026 Mykhaylo Tretyakov | Kandidat №42 für das Jugendparlament Braunschweig</p>
-        </div>
+<body class="document-page">
+  <header class="document-topbar">
+    <div class="wrap">
+      <a class="document-back" href="index.html#home"><span>←</span> Zurück zur Hauptseite</a>
     </div>
+  </header>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Анимация при скролле
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Наблюдаем за элементами
-            document.querySelectorAll('h2, .contact-card, .badge').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-            
-            // Форматирование номера телефона
-            const phoneElement = document.querySelector('p strong:contains("Telefon")');
-            // Номер уже отформатирован в HTML
-        });
-    </script>
+  <main>
+    <section class="document-hero">
+      <div class="wrap">
+        <h1>Impressum</h1>
+        <div class="document-badge">Angaben gemäß §5 TMG</div>
+      </div>
+    </section>
+
+    <article class="document-body">
+      <div class="document-content imprint-content">
+        <div class="imprint-contact">
+          <div class="document-contact">
+            <p><strong>Mykhaylo Tretyakov</strong></p>
+            <p>Kamp 10A<br>38122 Braunschweig<br>Deutschland</p>
+          </div>
+
+          <div>
+            <h2>Kontakt</h2>
+            <div class="document-contact">
+              <p><strong>Telefon:</strong> 0175 7432903</p>
+              <p><strong>E-Mail:</strong> <a href="mailto:mishatret2010@gmail.com">mishatret2010@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="document-note">
+          <p><strong>Verantwortlich für den Inhalt nach §55 Abs. 2 RStV:</strong><br>Mykhaylo Tretyakov, Kamp 10A, 38122 Braunschweig</p>
+        </div>
+
+        <p>Diese Webseite dient der persönlichen Präsentation als Kandidat für das Jugendparlament Braunschweig und verfolgt keine kommerziellen Zwecke.</p>
+
+        <div class="document-source">
+          <p>Quelle: <a href="https://www.e-recht24.de">eRecht24.de</a></p>
+          <p>&copy; 2026 Mykhaylo Tretyakov | Kandidat №42 für das Jugendparlament Braunschweig</p>
+        </div>
+      </div>
+    </article>
+  </main>
 </body>
 </html>
